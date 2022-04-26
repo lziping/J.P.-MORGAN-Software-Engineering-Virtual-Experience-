@@ -1,0 +1,161 @@
+From e27bba9c21dc689fccf7590329d133866204f64b Mon Sep 17 00:00:00 2001
+From: lziping <zipingl@seas.upenn.edu>
+Date: Tue, 26 Apr 2022 02:08:24 -0400
+Subject: [PATCH] Create Patch File
+
+---
+ .DS_Store                | Bin 0 -> 6148 bytes
+ .upm/store.json          |   1 +
+ .upm/store.json685385725 |   1 +
+ Instructions             |   5 +++++
+ jpm_module_1             |   1 +
+ main.py                  |  34 ++++++++++++++++++++++++++++++++++
+ poetry.lock              |   8 ++++++++
+ pyproject.toml           |  13 +++++++++++++
+ requirements.txt         |   1 +
+ 9 files changed, 64 insertions(+)
+ create mode 100644 .DS_Store
+ create mode 100644 .upm/store.json
+ create mode 100644 .upm/store.json685385725
+ create mode 100644 Instructions
+ create mode 160000 jpm_module_1
+ create mode 100644 main.py
+ create mode 100644 poetry.lock
+ create mode 100644 pyproject.toml
+ create mode 100644 requirements.txt
+
+diff --git a/.DS_Store b/.DS_Store
+new file mode 100644
+index 0000000000000000000000000000000000000000..c627c1b0124ef2df504fb1a2d706ac146620bb2a
+GIT binary patch
+literal 6148
+zcmeHK!AiqG5S^`6Q&i|dL2nCQ3%0R{;w9Aj14i_q5*t%Anr2JW*h4Agu0Q0D_&v_-
+zZWXCLDk?KD`!=(0ve}ogn*jjP%A*EA6#yJ`!cqmBFO0^?XRKr+3y4DBqX!Bi$RUC5
+z44VVLQ2}~)t8fo}=s|$~@%{p6grlq<CMrbEOW051Y*??qiqb-PacS9Ec2=A#|4xnk
+zVP}|Ut<K<ru1=Lo!fC$~p2gi!P+dP#>97;0-GNSsqb^b|&*L;wqn66kDAT#V8E`62
+zC8%zV$F95ItV!41o7Cj^z^&J0b9ZktsW=<kJBKI1L()stlTlUR2dHh$;uM~-Gk1Ye
+zc9Vqoz(k%)dh`crqS9OBOeY~e8!NyHumXQq0lS+yD}Q$h{N$_vEAUMU(EcFN2|bI2
+zLA`Zgqe}q9GKRHbpK1xpkrq9Rg+Uxa6DAeWqzYSN2$PO+X?dQ-!k|e9VT%u8XBM_X
+z5qfsKztnUPo<VL|0aoC%0#y5<Rq6aco?riK5;v>>EAT%R5aqVtZsFSO**ddII%_5R
+sH98sb3WM({*wIHZa_K1EMAwFKNgYJbVqp*?X#69fW#EPt_)!Jk07>RoP5=M^
+
+literal 0
+HcmV?d00001
+
+diff --git a/.upm/store.json b/.upm/store.json
+new file mode 100644
+index 0000000..75ba42f
+--- /dev/null
++++ b/.upm/store.json
+@@ -0,0 +1 @@
++{"version":2,"languages":{"python-python3-poetry":{"specfileHash":"cc28a7c13e60b444c18beb4f99da72b9","lockfileHash":"5a3a380b65c25534b5a97dbcaeed9da6","guessedImportsHash":"b06d83c7351b06e5a60d9907d464aef6"}}}
+diff --git a/.upm/store.json685385725 b/.upm/store.json685385725
+new file mode 100644
+index 0000000..ede7937
+--- /dev/null
++++ b/.upm/store.json685385725
+@@ -0,0 +1 @@
++{"version":2,"languages":{"python-python3-poetry":{"specfileHash":"cc28a7c13e60b444c18beb4f99da72b9","lockfileHash":"5a3a380b65c25534b5a97dbcaeed9da6","guessedImportsHash":"9dfe0b027c44a483c36016061df2be43"}}}
+diff --git a/Instructions b/Instructions
+new file mode 100644
+index 0000000..21d0bdd
+--- /dev/null
++++ b/Instructions
+@@ -0,0 +1,5 @@
++NOTE: IF YOU HAVEN'T CLICKED THE 'FORK' BUTTON ABOVE DO IT NOW!
++
++Open a new tab in your browser and copy paste the link below onto your browser's url to see the instructions slides for using this REPL:
++
++https://insidesherpa.s3.amazonaws.com/vinternships/companyassets/Sj7temL583QAYpHXD/repl_mod1_v4.pdf
+\ No newline at end of file
+diff --git a/jpm_module_1 b/jpm_module_1
+new file mode 160000
+index 0000000..15eb12b
+--- /dev/null
++++ b/jpm_module_1
+@@ -0,0 +1 @@
++Subproject commit 15eb12b082e30318841c195c47ef34278da2f4ee
+diff --git a/main.py b/main.py
+new file mode 100644
+index 0000000..20ac3f2
+--- /dev/null
++++ b/main.py
+@@ -0,0 +1,34 @@
++# BEFORE YOU DO ANYTHING, PLEASE DO FF
++# CLICK THE 'FORK' BUTTON ABOVE
++
++# READ`Instructions` file. You can access it by clicking on the 'Files' icon on the left side/column of the screen (i.e. the top most icon, above Packages and Settings) and then clicking on the 'Instructions' file to show the contents
++
++# This is the main.py script. It's the only script that you can run on this REPL platform via the run button above. This script takes care of displaying the output of stock price feed script you need to change in the `jpm_module_1` folder. 
++
++# YOU SHOULD NOT CHANGE ANYTHING HERE AS IT ONLY RUNS THE STOCK PRICE FEED SCRIPT AND SHOWS THE OUTPUT
++
++# IF YOU WISH TO DO THE BONUS TASK DESCRIBED IN THE INSRUCTIONS FILE, UNCOMMENT THE CODE BELOW
++
++import os
++import subprocess
++import time
++import signal
++
++os.chdir(os.getcwd()+'/jpm_module_1')
++
++process = subprocess.Popen(['python', 'server3.py'], cwd=os.getcwd(), preexec_fn=os.setsid)
++
++time.sleep(.300)
++
++process2 = subprocess.Popen(['python', 'client3.py'], cwd=os.getcwd(), preexec_fn=os.setsid)
++process2.wait()
++os.killpg(os.getpgid(process.pid), signal.SIGTERM)
++
++# FOR BONUS TASK 
++# IF YOU WANT TO DO IT THEN UNCOMMENT THE CODE BELOW
++# Comments are anything that's preceded with '#'
++# TO UNCOMMENT JUST REMOVE THE '#'
++
++#print("UNIT TEST RESULTS BELOW...")
++#process2 = subprocess.Popen(['python', #'client_test.py'], cwd=os.getcwd(), #preexec_fn=os.setsid)
++#process2.wait()
+\ No newline at end of file
+diff --git a/poetry.lock b/poetry.lock
+new file mode 100644
+index 0000000..f41588b
+--- /dev/null
++++ b/poetry.lock
+@@ -0,0 +1,8 @@
++package = []
++
++[metadata]
++lock-version = "1.1"
++python-versions = "^3.8"
++content-hash = "fafb334cb038533f851c23d0b63254223abf72ce4f02987e7064b0c95566699a"
++
++[metadata.files]
+diff --git a/pyproject.toml b/pyproject.toml
+new file mode 100644
+index 0000000..de8c6ad
+--- /dev/null
++++ b/pyproject.toml
+@@ -0,0 +1,13 @@
++[build-system]
++build-backend = "poetry.masonry.api"
++requires = ["poetry>=0.12"]
++
++[tool]
++[tool.poetry]
++authors = ["Your Name <you@example.com>"]
++description = ""
++name = "runner"
++version = "0.1.0"
++[tool.poetry.dependencies]
++python = "^3.8"
++[tool.poetry.dev-dependencies]
+diff --git a/requirements.txt b/requirements.txt
+new file mode 100644
+index 0000000..b051c6c
+--- /dev/null
++++ b/requirements.txt
+@@ -0,0 +1 @@
++client
+-- 
+2.32.0 (Apple Git-132)
+
